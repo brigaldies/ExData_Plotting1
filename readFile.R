@@ -1,7 +1,8 @@
 filename <- './exdata_data_household_power_consumption/household_power_consumption.txt'
 
 # ------------------------------------------------------------------------------
-# readData(filepath): Reads and filters data from a CSV file using fread.
+# readData(filepath): Reads data from a CSV file using fread, and subsets
+# with dplyr's filter() function.
 #
 # The entire data set is loaded into RAM, then subsetted using dplyr.
 #
@@ -82,8 +83,8 @@ selectData <- function(filepath) {
 # ------------------------------------------------------------------------------
 # fixData(df): Fixes the data set.
 #
-# - Creates a date and time column
-# - Coerces the observations as numeric
+# - Creates a date and time column.
+# - Coerces the observations as numeric.
 #
 # Argument:
 # filepath: Path name of the data file to read.

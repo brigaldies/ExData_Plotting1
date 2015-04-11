@@ -8,7 +8,9 @@
 # Row 2, Col 2: Scatter plot of Energy Sub-metering stations vs. Date and time
 # Row 2, Col 2: Scatter plot of Global Re-Active Power vs. Date and time.
 #
-# Note: NA observations are filtered out of the data frame before plotting.
+# Notes:
+# 1. Requires readData() from readFile.R.
+# 2.NA observations are filtered out of the data frame before plotting.
 # 
 # Arguments:
 # filepath: Path name of the data file to load.

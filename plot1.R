@@ -3,7 +3,9 @@
 #
 # Draws plot #1: Histogram of the Global Active Power for Feb 1th and 2nd 2007.
 #
-# Note: NA observations are filtered out of the data frame before plotting.
+# Notes:
+# 1. Requires readData() from readFile.R.
+# 2.NA observations are filtered out of the data frame before plotting.
 #
 # Arguments:
 # filepath: Path name of the data file to load.
