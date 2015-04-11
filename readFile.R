@@ -1,5 +1,3 @@
-filename <- './exdata_data_household_power_consumption/household_power_consumption.txt'
-
 # ------------------------------------------------------------------------------
 # readData(filepath): Reads data from a CSV file using fread, and subsets
 # with dplyr's filter() function.
@@ -19,7 +17,10 @@ readData <- function(filepath) {
     
     message("Reading", filepath)
     execTime <- system.time({
-        data <- fread(filepath, sep=';', na.strings="?")
+        data <- fread(filepath, 
+                      sep=';', 
+                      na.strings="?", 
+                      colClasses=rep('character', 9))
     })
     dims <- dim(data)
     message("Done reading data: ", dims[1], " obs. of ", dims[2], " variables")    
@@ -87,7 +88,7 @@ selectData <- function(filepath) {
 # - Coerces the observations as numeric.
 #
 # Argument:
-# filepath: Path name of the data file to read.
+# df: Data frame to cleanup.
 # ------------------------------------------------------------------------------
 fixData <- function(df) {
     df %>%         
