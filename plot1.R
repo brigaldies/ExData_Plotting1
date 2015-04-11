@@ -22,6 +22,7 @@ plot1 <- function(filepath, data = NULL) {
     # Read the data if not provided as an argument
     df <- data
     if (is.null(df)) {
+        source('./readFile.R')
         df <- readData(filepath)
     }
     
