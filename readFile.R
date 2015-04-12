@@ -91,8 +91,10 @@ selectData <- function(filepath) {
 # df: Data frame to cleanup.
 # ------------------------------------------------------------------------------
 fixData <- function(df) {
-    df %>%         
-        mutate(DateTime = as.POSIXct(paste(Date, Time), format="%d/%m/%Y %H:%M:%S")) %>%
+    require(lubridate)
+        
+    df %>%          
+        mutate(DateTime = dmy_hms(paste(Date, Time))) %>%
         transform(Global_active_power = as.numeric(Global_active_power)) %>%
         transform(Global_reactive_power = as.numeric(Global_reactive_power)) %>%
         transform(Voltage = as.numeric(Voltage)) %>%
