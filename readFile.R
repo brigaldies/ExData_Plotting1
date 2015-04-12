@@ -87,6 +87,16 @@ selectData <- function(filepath) {
 # - Creates a date and time column.
 # - Coerces the observations as numeric.
 #
+# Notes: Alternative ways of creating the DateTime column:
+# a. strptime, which returns a POSIXlt date. This  produces a warning!
+# DateTime = strptime(paste(Date, Time), format = '%d/%m/%Y %H:%M:%S')
+# 
+# b. cast the strptime output to POSIXct to eliminate the warning:
+# DateTime = as.POSIXct(strptime(paste(Date, Time), format = '%d/%m/%Y %H:%M:%S'))
+#
+# c. as.POSIXct
+# DateTime = as.POSIXct(paste(Date, Time), format = '%d/%m/%Y %H:%M:%S'))
+#
 # Argument:
 # df: Data frame to cleanup.
 # ------------------------------------------------------------------------------
